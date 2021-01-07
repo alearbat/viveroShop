@@ -1,0 +1,43 @@
+
+nav {
+  margin-bottom: 20px;
+  .navbar {
+    ul {
+      li {
+        margin-right: 20px;
+      }
+    }
+  }
+  .navbar__element {
+    font-family: $mainFont;
+    font-size: 18px;
+    color: rgb(80, 80, 80);
+  }
+  .navbar-brand {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar {
+    ul {
+      li {
+        a {
+          position: relative;
+        }
+      }
+    }
+  }
+  #navbarNav {
+    margin-right: 20px;
+  }
+}
+
+.card {
+  text-align: center;
+  width: 18rem;
+  margin: 10px;
+  .card-body {
+    text-align: center;
+  }
+}

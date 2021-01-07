@@ -1,0 +1,29 @@
+body {
+  font-family: "Montserrat", sans-serif; }
+
+nav {
+  margin-bottom: 20px; }
+  nav .navbar ul li {
+    margin-right: 20px; }
+  nav .navbar__element {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    color: #505050; }
+  nav .navbar-brand {
+    margin-left: 20px; }
+
+@media (min-width: 768px) {
+  .navbar ul li a {
+    position: relative; }
+  #navbarNav {
+    margin-right: 20px; } }
+
+.card {
+  text-align: center;
+  width: 18rem;
+  margin: 10px; }
+  .card .card-body {
+    text-align: center; }
+
+body.container-fluid {
+  padding: 0px; }

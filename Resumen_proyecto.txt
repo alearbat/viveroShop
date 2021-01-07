@@ -1,0 +1,2 @@
+Mi proyecto consiste en una pagina web de un vivero que vende plantas online. 
+La idea es realizar con JavaScript el carrito de compras del mismo.
