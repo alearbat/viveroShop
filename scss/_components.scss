@@ -1,3 +1,10 @@
+//header image
+
+.background__item--content1 {
+  max-width: 100%;
+}
+
+//nav
 
 nav {
   margin-bottom: 20px;
@@ -33,11 +40,74 @@ nav {
   }
 }
 
+
+
 .card {
   text-align: center;
   width: 18rem;
   margin: 10px;
+  border-radius: 20px;
   .card-body {
     text-align: center;
   }
 }
+
+footer {
+  height: 70px;
+  background-image: url(../img/image_footer.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  .fab {
+    margin-right: 20px;
+    font-size: 2em;
+    color: white;
+  }
+  .fa-twitter-square {
+    border-right: 1px solid white;
+    padding-right: 20px;
+  }
+  .footer__copyright {
+    font-size: 13px;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.title {
+  margin-left: 20px;
+
+}
+i {
+  margin-right: 5px;
+}
+
+//shopping
+.shopping-bg {
+  background-color: rgb(221, 221, 221);
+  padding: 20px;
+}
+
+.product {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  .cart__img {
+    size: 80%;
+    border-radius: 5px;
+  }
+  .total {
+    border-top: solid 1px grey;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .quant {
+    button {
+      border: white;
+      background-color: white;
+      margin: 5px;
+    }
+  }
+}
+

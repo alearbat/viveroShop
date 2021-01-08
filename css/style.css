@@ -1,6 +1,9 @@
 body {
   font-family: "Montserrat", sans-serif; }
 
+.background__item--content1 {
+  max-width: 100%; }
+
 nav {
   margin-bottom: 20px; }
   nav .navbar ul li {
@@ -21,9 +24,55 @@ nav {
 .card {
   text-align: center;
   width: 18rem;
-  margin: 10px; }
+  margin: 10px;
+  border-radius: 20px; }
   .card .card-body {
     text-align: center; }
+
+footer {
+  height: 70px;
+  background-image: url(../img/image_footer.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white; }
+  footer .fab {
+    margin-right: 20px;
+    font-size: 2em;
+    color: white; }
+  footer .fa-twitter-square {
+    border-right: 1px solid white;
+    padding-right: 20px; }
+  footer .footer__copyright {
+    font-size: 13px;
+    margin: 0;
+    padding: 10px; }
+
+.title {
+  margin-left: 20px; }
+
+i {
+  margin-right: 5px; }
+
+.shopping-bg {
+  background-color: #dddddd;
+  padding: 20px; }
+
+.product {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px; }
+  .product .cart__img {
+    size: 80%;
+    border-radius: 5px; }
+  .product .total {
+    border-top: solid 1px grey;
+    margin-top: 20px;
+    padding-top: 20px; }
+  .product .quant button {
+    border: white;
+    background-color: white;
+    margin: 5px; }
 
 body.container-fluid {
   padding: 0px; }
