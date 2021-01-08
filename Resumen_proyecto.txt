@@ -1,2 +1,8 @@
 Mi proyecto consiste en una pagina web de un vivero que vende plantas online. 
-La idea es realizar con JavaScript el carrito de compras del mismo.
+La idea es realizar con JavaScript el carrito de compras del mismo:
+Funciones contempladas:
+- tener productos diferenciados por imagen, codigo, descripcion y precio.
+- sumar y restar productos al carrito
+- calcular el total de la compra
+- calcular posibles promociones que pueda haber
+- calcular precio de delivery segun ubicacion
