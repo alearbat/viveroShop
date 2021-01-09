@@ -1,10 +1,10 @@
 class Product {
 
-  constructor(name, code, price, img){
-    this.name = name;
-    this.code = code;
-    this.price = price;
-    this.img = img;
+  constructor(infoPlant){
+    this.name = infoPlant[0];
+    this.code = infoPlant[1];
+    this.price = infoPlant[2];
+    this.img = infoPlant[3];
   }
 
   totalPrice(){
@@ -17,6 +17,6 @@ class Product {
   }
 
   getProduct(){
-    return (this.name, this.code, this.price, this.img);
+    console.log(infoPlant);
   }
 }
