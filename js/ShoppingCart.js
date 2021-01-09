@@ -1,30 +1,35 @@
-class Cart {
+class ShoppingCart {
 
-  constructor(products, quantity, delivery) {
-    this.products = products;
-    this.quantity = quantity;
-    this.delivery = delivery;
-    this.totalPrice = 0;
+  constructor() {
+    this.cart = [];
   }
 
-  addToCart(product, quantity) {
- 
+  addNewProduct(product){
+    this.cart.push(product);
   }
 
-  removeFromCart() {
-    
+  changeQuantity(){
+    //sumar o restar cantidad de un producto
   }
 
-  calcTotalPrice() {
-
+  removeFromCart(){
+    //borrar un producto del carrito
   }
-  
+
+  calcTotalPrice(){
+    //calcular la suma total de todos los productos del carrito
+  }
+
   calcPromo(){
-
+    //calcular alguna eventual promocion
   }
 
-  calcDelivery() {
+  calcDelivery(){
+    //calcular cuanto saldria el delivery de los productos segun ubicacion
+  }
 
+  getTotalProducts(){
+    return this.cart;
   }
 
 }
