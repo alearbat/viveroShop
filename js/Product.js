@@ -1,26 +1,22 @@
 class Product {
 
-  constructor(name, code, price) {
+  constructor(name, code, price, img){
     this.name = name;
     this.code = code;
     this.price = price;
+    this.img = img;
   }
-  totalPrice() {
+
+  totalPrice(){
     return this.price * 1.21;
   }
 
-  promoPrice(discount) {
+  promoPrice(discount){
     let totalPrice = this.totalPrice();
     return totalPrice * discount;
   }
+
+  getProduct(){
+    return (this.name, this.code, this.price, this.img);
+  }
 }
-
-let Product1 = new Product('Aloe Vera', 'P001', 500);
-console.log(Product1.totalPrice());
-console.log(Product1.promoPrice(0.8));
-
-let Product2 = new Product('Cactus', 'P002', 200);
-console.log(Product2.totalPrice());
-console.log(Product2.promoPrice(0.8));
-
-// A partir de aqui deberian continuar declarandose el resto de los productos
