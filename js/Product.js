@@ -20,3 +20,4 @@ class Product {
     console.log(infoPlant);
   }
 }
+

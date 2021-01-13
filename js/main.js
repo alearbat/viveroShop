@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+/*
 let plants = [
   ["Aloe Vera", "P001", 500, "plant"], // agregar imagen en carpeta img
   ["Cactus", "P002", 200, "plant"],
@@ -15,4 +27,4 @@ let cart = new ShoppingCart();
 
 cart.addNewProduct(plant1);
 console.log(cart.getTotalProducts());
-
+*/
