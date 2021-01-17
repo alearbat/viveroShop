@@ -14,6 +14,8 @@ nav {
     color: #505050; }
   nav .navbar-brand {
     margin-left: 20px; }
+  nav i {
+    margin-left: 8px; }
 
 @media (min-width: 768px) {
   .navbar ul li a {
@@ -51,16 +53,23 @@ footer {
     margin: 0;
     padding: 10px; }
 
-.title {
-  margin-left: 20px; }
-
-i {
-  margin-right: 5px; }
-
 .shopping-bg {
   background-image: url(../img/background_02.jpg);
   background-attachment: fixed;
   padding: 20px; }
+  .shopping-bg .title {
+    font-size: 25px;
+    text-align: center; }
+  .shopping-bg .btn-whatsapp {
+    height: 50px;
+    width: 100%; }
+    .shopping-bg .btn-whatsapp a img {
+      position: fixed;
+      right: 1em;
+      width: 50px; }
+
+button {
+  margin: 10px; }
 
 .product {
   margin: 20px;
