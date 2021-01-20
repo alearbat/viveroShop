@@ -20,16 +20,13 @@ nav {
     font-size: 18px;
     color: rgb(80, 80, 80);
   }
-  .navbar-brand {
-    margin-left: 20px;
-  }
-  i {
-    margin-left: 8px;
-  }
 }
 
 @media (min-width: 768px){
   .navbar {
+    .navbar-brand {
+      margin-left: 10px;
+    }
     ul {
       li {
         a {
@@ -94,13 +91,12 @@ footer {
     text-align: center;
   }
   .btn-whatsapp {
-    height: 60px;
-    width: 100%;
     a img {
     width: 60px;
     }
   }
 }
+
 button {
   margin: 10px;
 }

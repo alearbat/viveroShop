@@ -12,12 +12,10 @@ nav {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     color: #505050; }
-  nav .navbar-brand {
-    margin-left: 20px; }
-  nav i {
-    margin-left: 8px; }
 
 @media (min-width: 768px) {
+  .navbar .navbar-brand {
+    margin-left: 10px; }
   .navbar ul li a {
     position: relative; }
   #navbarNav {
@@ -60,11 +58,8 @@ footer {
   .shopping-bg .title {
     font-size: 25px;
     text-align: center; }
-  .shopping-bg .btn-whatsapp {
-    height: 50px;
-    width: 100%; }
-    .shopping-bg .btn-whatsapp a img {
-      width: 50px; }
+  .shopping-bg .btn-whatsapp a img {
+    width: 60px; }
 
 button {
   margin: 10px; }
