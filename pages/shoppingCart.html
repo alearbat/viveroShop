@@ -12,9 +12,11 @@
   <script defer src="../js/shoppingCart.js"></script>
 </head>
 <body class="container-fluid">
+  <!--Background image on top-->  
   <div>
     <img class="background__item--content1" src="../img/vertical.png" alt="jardin vertical">
   </div>
+  <!--Nav bar: sticky on top-->
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,21 +40,25 @@
       </ul>
     </div>
   </nav>
+  <!--Shopping Cart-->
   <section class="shopping-bg">
     <h1 class="title">Tu carrito de compras</h1>
     <div class="row d-flex justify-content-center product">
-      <div class="row align-items-center">
+      <div class="align-items-center">
         <p class="col-12">Items</p>
       </div>
+      <!--List of products selected-->
       <ul id="selectedProductsContainer" class="col-xl-12 col-md-12 col-sm-12 col-12"> 
       </ul>
-      <div class="row align-items-center total">
-        <h4 class="name col-xl-10 col-md-10 col-sm-4 col-8">TOTAL</h4>
-        <h4 id="totalPrice" class="price col-xl-2 col-md-2 col-sm-6 col-6"></h4>
+      <!--Cart total-->
+      <div class="col-xl-11 d-flex justify-content-end total">
+        <h4 class="name ">TOTAL</h4><hr>
+        <h4 id="totalPrice" class="price"></h4>
       </div>
-      <div class="row justify-content-end">
-        <button id="emptyCart" type="button" class="btn btn-secondary col-lg-4 col-md-4 col-sm-6 col-11">Vaciar Carrito</button>
-        <button id="buy" type="button" class="btn btn-primary col-lg-4 col-md-4 col-sm-6 col-11">Comprar</button>
+      <!--Cart buttons-->
+      <div class="d-flex justify-content-center col-lg-12">
+        <button id="emptyCart" type="button" class="btn btn-secondary col-lg-2 col-md-2 col-sm-6 col-6">Vaciar Carrito</button>
+        <button id="buy" type="button" class="btn btn-primary col-lg-2 col-md-2 col-sm-6 col-6">Comprar</button>
       </div>
     </div>
     <div class="row fixed d-flex justify-content-end btn-whatsapp">
