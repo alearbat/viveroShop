@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <title>Plant-Ar</title>
   <script defer src="../js/data.js"></script>
   <script defer src="../js/domBuilder.js"></script>
@@ -17,7 +18,7 @@
     <img class="background__item--content1" src="../img/vertical.png" alt="jardin vertical">
   </div>
   <!--Nav bar: sticky on top-->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,9 +52,9 @@
       <ul id="selectedProductsContainer" class="col-xl-12 col-md-12 col-sm-12 col-12"> 
       </ul>
       <!--Cart total-->
-      <div class="col-xl-11 d-flex justify-content-end total">
-        <h4 class="name ">TOTAL</h4><hr>
-        <h4 id="totalPrice" class="price"></h4>
+      <div class="d-flex justify-content-center total col-xl-12">
+        <h4 class="name col-xl-10 col-md-10 col-sm-9">TOTAL</h4><hr>
+        <h4 id="totalPrice" class="price col-xl-2 col-md-2 col-sm-3"></h4>
       </div>
       <!--Cart buttons-->
       <div class="d-flex justify-content-center col-lg-12">

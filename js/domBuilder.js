@@ -27,10 +27,26 @@ const DOMBuilder = function() {
 
   this.h6 = function(title) {
     const h6 = document.createElement('h6');
-    h6.className = 'name col-xl-4 col-md-4 col-sm-4 col-4';
+    h6.className = 'name col-xl-5 col-md-5 col-sm-5 col-5';
     h6.textContent = title;
 
     return h6;
+  }
+
+  this.quantity = function(units) {
+    const h6 = document.createElement('h6');
+    h6.className = 'quant col-xl-2 col-md-2 col-sm-2 col-2';
+    h6.textContent = units;
+
+    return h6;
+  }
+
+  this.trash = function () {
+    const a = document.createElement('a');
+    a.className = 'deleteItem col-xl-1 col-md-1 col-sm-1 col-1';
+    a.style = 'cursor: pointer';
+
+    return a;
   }
 
   this.p = function(content) {
@@ -61,6 +77,7 @@ const DOMBuilder = function() {
   this.button2 = function(content) {
     const button = document.createElement('button');
     button.textContent = content;
+    button.style = 'cursor: pointer';
     
     return button;
   }
