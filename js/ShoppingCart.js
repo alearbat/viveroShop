@@ -19,12 +19,10 @@ function buildProductList(product) {
     buttonLess.className = 'remove';
     buttonPlus.className = 'add';
 
-    // Here I'm trying to add click event to trash button ???
-    // trash.addEventListener('click', (event)=> {
-    //   const selectedId = event.target.dataset; ??????
-    //   }  
-    //   removeProduct(selectedId);
-    // });
+    // To add click event to trash button
+    trash.addEventListener('click', () => {
+      removeProduct(product.id);
+    });
 
     li.appendChild(image);
     li.appendChild(codeAndTitle);
@@ -40,13 +38,12 @@ function buildProductList(product) {
 }
 
 // To generate all cards
+
+const selectedProductsContainer = document.getElementById('selectedProductsContainer');
+
 window.addEventListener('DOMContentLoaded', ()=> {  //when the DOM loads
   // To load the shopping cart list, if it exists
-  selectedProducts.forEach(product=> {
-    const cartCard = buildProductList(product);
-    selectedProductsContainer.appendChild(cartCard);
-  });
-  calcTotalPrice();
+  showList();
 });
 
 // To add number of items to button "carrito(0)" at navbar
@@ -58,13 +55,17 @@ function addNumberOfItems() {
 }
 
 //To show the products selected
-const selectedProductsContainer = document.getElementById('selectedProductsContainer');
-
-function buildSelectedProducts() {
-  const lastProduct = selectedProducts[selectedProducts.length-1];
-
-  const card = buildProductList(lastProduct);
-  selectedProductsContainer.appendChild(card);
+function showList() {
+  while (selectedProductsContainer.hasChildNodes()) {  
+    selectedProductsContainer.removeChild(selectedProductsContainer.firstChild);
+  }
+  // To load the shopping cart list, if it exists
+  selectedProducts.forEach(product=> {
+    const cartCard = buildProductList(product);
+    selectedProductsContainer.appendChild(cartCard);
+  });
+  calcTotalPrice();
+  addNumberOfItems();
 }
 
 // To empty shopping cart
@@ -90,13 +91,16 @@ let units = 1;
 
 // To delete an item
 function removeProduct(productId){
-  for(let i=0; i<selectedProducts.length; i++) {
+  let i;
+  for(i=0; i<selectedProducts.length; i++) {
     if (selectedProducts[i].id == productId) {
       break;
     }
   }
   selectedProducts.splice(i, 1);
-}  
+  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+  showList();
+}
 
 // To calculate total price
 function calcTotalPrice() {
