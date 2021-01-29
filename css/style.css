@@ -76,7 +76,7 @@ button {
   .product .total {
     border-top: solid 1px grey;
     margin-top: 20px;
-    padding-top: 20px; }
+    padding: 20px; }
   .product .quant button {
     border: white;
     background-color: white;
