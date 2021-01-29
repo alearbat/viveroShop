@@ -22,20 +22,16 @@ function buildProductCard(product) {
 }
 
 // To generate all cards
-window.addEventListener('DOMContentLoaded', ()=> {  //when the DOM loads
-    const productContainer = document.getElementById('productContainer');  //  let productContainer is generated, which represents this section
+$(window).ready(function() { 
+ //when the DOM loads
+    const productContainer = $("#productContainer");  //  const productContainer is generated, which represents this section
     
     products.forEach(product=> {  // from data.js, products array, for each product:
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
-        productContainer.appendChild(card); // it's saved inside the section "productContainer"
+        productContainer.append(card); // it's saved inside the section "productContainer"
     });
 
-    // To access to buttons
-    const btnProducts = document.querySelectorAll('.btnProduct'); //let btnProducts is generated for all the selectors with this class
-    btnProducts.forEach(btnProduct => { // for each of this elements:
-        btnProduct.addEventListener('click', onSelectClick); // executes onSelectedClick function on event click
-    });
-
+    $(".btnProduct").click(onSelectClick);
 });
 
 // To add an item to "selectedProducts" by clicking the button
@@ -56,10 +52,10 @@ function onSelectClick(event) {
 }
 
 // To add number of items to button "carrito(0)" at navbar
-const shoppingCartButton = document.getElementById('shoppingCart');
-shoppingCartButton.textContent = ("Carrito (" + selectedProducts.length + ")");
+const shoppingCartButton = $("#shoppingCart");
+shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
 
 function addNumberOfItems() {
-    shoppingCartButton.textContent = ("Carrito (" + selectedProducts.length + ")");
+    shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
 }
 

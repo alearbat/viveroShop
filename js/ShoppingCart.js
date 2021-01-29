@@ -39,47 +39,41 @@ function buildProductList(product) {
 
 // To generate all cards
 
-const selectedProductsContainer = document.getElementById('selectedProductsContainer');
+const selectedProductsContainer = $("#selectedProductsContainer");
 
-window.addEventListener('DOMContentLoaded', ()=> {  //when the DOM loads
-  // To load the shopping cart list, if it exists
-  showList();
-});
+$(window).ready(function() {showList()});//when the DOM loads, to load the shopping cart list, if it exists
 
 // To add number of items to button "carrito(0)" at navbar
-const shoppingCartButton = document.getElementById('shoppingCart');
-shoppingCartButton.textContent = ("Carrito (" + selectedProducts.length + ")");
+const shoppingCartButton = $("#shoppingCart");
+shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
 
 function addNumberOfItems() {
-    shoppingCartButton.textContent = ("Carrito (" + selectedProducts.length + ")");
+    shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
 }
 
 //To show the products selected
 function showList() {
-  while (selectedProductsContainer.hasChildNodes()) {  
-    selectedProductsContainer.removeChild(selectedProductsContainer.firstChild);
-  }
+    selectedProductsContainer.empty();
   // To load the shopping cart list, if it exists
   selectedProducts.forEach(product=> {
     const cartCard = buildProductList(product);
-    selectedProductsContainer.appendChild(cartCard);
+    selectedProductsContainer.append(cartCard);
   });
   calcTotalPrice();
   addNumberOfItems();
 }
 
 // To empty shopping cart
-const emptyCart = document.getElementById('emptyCart');
-emptyCart.addEventListener('click', function onBtnClick(){
+const emptyCart = $("#emptyCart");
+
+emptyCart.click(function empty(){
   // Resets counter on "Carrito()"
   selectedProducts = [];
   localStorage.setItem("Selected Products", []);
-  shoppingCartButton.textContent = ("Carrito (" + selectedProducts.length + ")");
+  shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
   // Deletes all <li> added before
-  let list = document.getElementById('selectedProductsContainer');
-  while (list.hasChildNodes()) {  
-    list.removeChild(list.firstChild);
-  }
+  $("#selectedProductsContainer").empty();
+  
   calcTotalPrice();
 });
 
@@ -104,7 +98,7 @@ function removeProduct(productId){
 
 // To calculate total price
 function calcTotalPrice() {
-  const totalPrice = document.getElementById('totalPrice');
+  const totalPrice = $("#totalPrice");
   let productPrice = 0;
   if(!selectedProducts) {
     productPrice = 0;
@@ -114,7 +108,7 @@ function calcTotalPrice() {
       productPrice += price;
       console.log(productPrice);
     });
-    totalPrice.textContent = ('$ ' + productPrice);
+    totalPrice.text('$ ' + productPrice);
   }
 }
 
