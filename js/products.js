@@ -22,8 +22,7 @@ function buildProductCard(product) {
 }
 
 // To generate all cards
-$(window).ready(function() { 
- //when the DOM loads
+$(window).ready(function() { //when the DOM loads
     const productContainer = $("#productContainer");  //  const productContainer is generated, which represents this section
     
     products.forEach(product=> {  // from data.js, products array, for each product:
@@ -84,4 +83,3 @@ function addNumberOfItems() {
     totalQ(); 
     shoppingCartButton.text("Carrito (" + totalUnits + ")");
 }
-

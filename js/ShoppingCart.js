@@ -24,6 +24,16 @@ function buildProductList(product) {
       removeProduct(product.id);
     });
 
+    //To remove 1 unit to an item
+    buttonLess.addEventListener('click', () => {
+      removeOne(product.id);
+    });
+
+    //To remove 1 unit to an item
+    buttonPlus.addEventListener('click', () => {
+      addOne(product.id);
+    });
+
     li.appendChild(image);
     li.appendChild(codeAndTitle);
     li.appendChild(div);
@@ -39,7 +49,6 @@ function buildProductList(product) {
 
 // To generate all cards
 const selectedProductsContainer = $("#selectedProductsContainer");
-
 
 // To calculate number of total units
 let totalUnits;
@@ -66,14 +75,13 @@ function addNumberOfItems() {
 //To show the products selected
 function showList() {
   selectedProductsContainer.empty();
-
 // To load the shopping cart list, if it exists
-selectedProducts.forEach(product=> {
-  const cartCard = buildProductList(product);
-  selectedProductsContainer.append(cartCard);
-});
-calcTotalPrice();
-addNumberOfItems();
+  selectedProducts.forEach(product=> {
+    const cartCard = buildProductList(product);
+    selectedProductsContainer.append(cartCard);
+  });
+  calcTotalPrice();
+  addNumberOfItems();
 } 
 
 showList();
@@ -92,11 +100,35 @@ emptyCart.click(function empty(){
   calcTotalPrice();
 });
 
-// To add units to an item
-let units = 1;
+// To add 1 unit to an item
+function addOne(productId) {
+  let i;
+  for(i=0; i<selectedProducts.length; i++) {
+    if (selectedProducts[i].id == productId) {
+      break;
+    }
+  }
+  selectedProducts[i].units++;
+  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+  showList();
+}
 
-// To remove units to an item
-
+// To remove 1 unit to an item
+function removeOne(productId) {
+  let i;
+  for(i=0; i<selectedProducts.length; i++) {
+    if (selectedProducts[i].id == productId) {
+      break;
+    }
+  }
+  selectedProducts[i].units--;
+  if (selectedProducts[i].units == 0){
+    removeProduct(selectedProducts[i].id);
+    showList();
+  }
+  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+  showList();
+}
 
 // To delete an item
 function removeProduct(productId){
@@ -123,6 +155,3 @@ function calcTotalPrice() {
     totalPrice.text('$ ' + productPrice);
   }
 }
-
-// Tareas pendientes:
-// hacer que funcionen los botones de + y - unidades
