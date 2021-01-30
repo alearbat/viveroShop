@@ -6,8 +6,8 @@ function buildProductList(product) {
     const div = document.createElement('div');
     const codeAndTitle = domBuilder.h6(product.code + " - " + product.name);
     const image = domBuilder.img2(product.image, product.name);
-    const price = domBuilder.p2(product.price);
-    const quantity = domBuilder.quantity(units); // I still have to correct the quantity of selected items
+    const price = domBuilder.p2(product.price * product.units);
+    const quantity = domBuilder.quantity(product.units); // I still have to correct the quantity of selected items
     const buttonLess = domBuilder.button2('-'); // I still have to add functionality to this button
     const buttonPlus = domBuilder.button2('+'); // I still have to add functionality to this button
     const trash = domBuilder.trash();
@@ -38,30 +38,45 @@ function buildProductList(product) {
 }
 
 // To generate all cards
-
 const selectedProductsContainer = $("#selectedProductsContainer");
 
-$(window).ready(function() {showList()});//when the DOM loads, to load the shopping cart list, if it exists
+
+// To calculate number of total units
+let totalUnits;
+function totalQ() {
+  totalUnits = 0;
+  if(selectedProducts.length > 0) {
+    for(let i = 0; i<selectedProducts.length; i++){
+    let count = selectedProducts[i].units;
+    totalUnits = totalUnits + count;
+    }
+  }
+}
 
 // To add number of items to button "carrito(0)" at navbar
 const shoppingCartButton = $("#shoppingCart");
-shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
+totalQ();
+shoppingCartButton.text("Carrito (" + totalUnits + ")");
 
 function addNumberOfItems() {
-    shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
+  totalQ(); 
+  shoppingCartButton.text("Carrito (" + totalUnits + ")");
 }
 
 //To show the products selected
 function showList() {
-    selectedProductsContainer.empty();
-  // To load the shopping cart list, if it exists
-  selectedProducts.forEach(product=> {
-    const cartCard = buildProductList(product);
-    selectedProductsContainer.append(cartCard);
-  });
-  calcTotalPrice();
-  addNumberOfItems();
-}
+  selectedProductsContainer.empty();
+
+// To load the shopping cart list, if it exists
+selectedProducts.forEach(product=> {
+  const cartCard = buildProductList(product);
+  selectedProductsContainer.append(cartCard);
+});
+calcTotalPrice();
+addNumberOfItems();
+} 
+
+showList();
 
 // To empty shopping cart
 const emptyCart = $("#emptyCart");
@@ -100,13 +115,10 @@ function removeProduct(productId){
 function calcTotalPrice() {
   const totalPrice = $("#totalPrice");
   let productPrice = 0;
-  if(!selectedProducts) {
-    productPrice = 0;
-  } else {
+  if(selectedProducts.length > 0) {
     selectedProducts.forEach(selectedProduct =>{
-      let price = selectedProduct.price;
+      let price = selectedProduct.price * selectedProduct.units;
       productPrice += price;
-      console.log(productPrice);
     });
     totalPrice.text('$ ' + productPrice);
   }
