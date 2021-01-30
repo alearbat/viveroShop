@@ -39,23 +39,49 @@ function onSelectClick(event) {
     const selectedId = event.target.dataset.id;
     
     let selectedProduct = {};
-    products.forEach(product => {
+    for(let product of products){
         if(parseInt(product.id) === parseInt(selectedId)) {
             selectedProduct = product;
+            break;
         }
-    });
-
-    selectedProducts.push(selectedProduct);
+    }
+    let found = false;
+    for(let entry of selectedProducts) {  
+        if(parseInt(selectedProduct.id) === parseInt(entry.id)){ //If selectedProduct exists at selectedProducts array:
+            entry.units ++;
+            found = true;
+            break;
+        }
+    } //If selectedProduct doesn't exist at selectedProducts array:
+    if (!found) {
+        const productToAdd = Object.assign({}, selectedProduct);
+        productToAdd.units = 1;
+        selectedProducts.push(productToAdd);
+    }
     localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
-
     addNumberOfItems();
+}
+
+// To calculate number of total units
+let totalUnits;
+
+function totalQ() {
+    totalUnits = 0;
+    if(selectedProducts.length > 0) {
+        for(let i = 0; i<selectedProducts.length; i++){
+        let count = selectedProducts[i].units;
+        totalUnits = totalUnits + count;
+        }
+    }
 }
 
 // To add number of items to button "carrito(0)" at navbar
 const shoppingCartButton = $("#shoppingCart");
-shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
+totalQ();
+shoppingCartButton.text("Carrito (" + totalUnits + ")");
 
 function addNumberOfItems() {
-    shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
+    totalQ(); 
+    shoppingCartButton.text("Carrito (" + totalUnits + ")");
 }
 
