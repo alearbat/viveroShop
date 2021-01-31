@@ -4,14 +4,13 @@ body {
 .background__item--content1 {
   max-width: 100%; }
 
-nav {
-  margin-bottom: 20px; }
-  nav .navbar ul li {
-    margin-right: 20px; }
-  nav .navbar__element {
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    color: #505050; }
+nav .navbar ul li {
+  margin-right: 20px; }
+
+nav .navbar__element {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #505050; }
 
 @media (min-width: 768px) {
   .navbar .navbar-brand {
@@ -50,6 +49,12 @@ footer {
     font-size: 13px;
     margin: 0;
     padding: 10px; }
+
+.services {
+  margin: 40px;
+  text-align: center; }
+  .services h1 {
+    margin: 20px 0px; }
 
 .shopping-bg {
   background-image: url(../img/background_02.jpg);

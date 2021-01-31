@@ -44,6 +44,22 @@
   </nav>
   <!--List of products-->
   <section id="productContainer" class="row flex justify-content-center shopping-bg">
+    <nav class="navbar navbar-expand-lg navbar-light  col-xl-12">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ordenar por
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" onclick="sortByName()">Nombre A-Z</a>
+              <a class="dropdown-item" onclick="sortByMinPrice()">Menor precio</a>
+              <a class="dropdown-item" onclick="sortByMaxPrice()">Mayor precio</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </section>
   <footer class="container-fluid">
 		<div class="row d-flex justify-content-center align-items-center">

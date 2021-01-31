@@ -83,3 +83,18 @@ function addNumberOfItems() {
     totalQ(); 
     shoppingCartButton.text("Carrito (" + totalUnits + ")");
 }
+
+// To sort items by Name
+function sortByName {
+
+}
+
+//To sort items by max price
+function sortByMaxPrice {
+
+}
+
+//To sort items by min price
+function sortByMinPrice {
+
+}
