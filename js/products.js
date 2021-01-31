@@ -85,16 +85,22 @@ function addNumberOfItems() {
 }
 
 // To sort items by Name
-function sortByName {
-
+/*function sortByName() {
+    let unorderedList = products;
+    unorderedList.sort();
+    console.log(unorderedList);
+    // unorderedList.forEach(product=> {  
+    //     const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
+    //     productContainer.append(card); // it's saved inside the section "productContainer"
+    // });
 }
 
 //To sort items by max price
-function sortByMaxPrice {
+function sortByMaxPrice() {
 
 }
 
 //To sort items by min price
-function sortByMinPrice {
+function sortByMinPrice() {
 
-}
+}*/
