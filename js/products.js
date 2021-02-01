@@ -11,6 +11,11 @@ function buildProductCard(product) {
 
     div.classList.add('card');
     div2.classList.add('card-body');
+    
+    //To add function to button when clicked
+    button.addEventListener('click', () => {
+        onSelectClick(product.id);
+    });
 
     div.appendChild(image);
     div.appendChild(div2);
@@ -30,12 +35,11 @@ $(window).ready(function() { //when the DOM loads
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
 
-    $(".btnProduct").click(onSelectClick);
 });
 
 // To add an item to "selectedProducts" by clicking the button
-function onSelectClick(event) {
-    const selectedId = event.target.dataset.id;
+function onSelectClick(productId) {
+    const selectedId = productId;
     
     let selectedProduct = {};
     for(let product of products){
@@ -98,7 +102,6 @@ function sortByName() {
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
-    $(".btnProduct").click(onSelectClick);
 }
 
 //To sort items by max price
@@ -115,7 +118,6 @@ function sortByMaxPrice() {
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
-    $(".btnProduct").click(onSelectClick);
 }
 
 //To sort items by min price
@@ -132,5 +134,4 @@ function sortByMinPrice() {
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
-    $(".btnProduct").click(onSelectClick);
 }
