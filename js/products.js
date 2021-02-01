@@ -85,22 +85,52 @@ function addNumberOfItems() {
 }
 
 // To sort items by Name
-/*function sortByName() {
-    let unorderedList = products;
-    unorderedList.sort();
-    console.log(unorderedList);
-    // unorderedList.forEach(product=> {  
-    //     const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
-    //     productContainer.append(card); // it's saved inside the section "productContainer"
-    // });
+function sortByName() {
+    products.sort(function(a,b) {
+        if(a.name < b.name) {
+            return -1;
+        }
+        return 1;
+    });
+    const productContainer = $("#productContainer");
+    productContainer.empty();
+    products.forEach(product=> {  
+        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
+        productContainer.append(card); // it's saved inside the section "productContainer"
+    });
+    $(".btnProduct").click(onSelectClick);
 }
 
 //To sort items by max price
 function sortByMaxPrice() {
-
+    products.sort(function(a,b) {
+        if(a.price > b.price) {
+            return -1;
+        }
+        return 1;
+    });
+    const productContainer = $("#productContainer");
+    productContainer.empty();
+    products.forEach(product=> {  
+        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
+        productContainer.append(card); // it's saved inside the section "productContainer"
+    });
+    $(".btnProduct").click(onSelectClick);
 }
 
 //To sort items by min price
 function sortByMinPrice() {
-
-}*/
+    products.sort(function(a,b) {
+        if(a.price < b.price) {
+            return -1;
+        }
+        return 1;
+    });
+    const productContainer = $("#productContainer");
+    productContainer.empty();
+    products.forEach(product=> {  
+        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
+        productContainer.append(card); // it's saved inside the section "productContainer"
+    });
+    $(".btnProduct").click(onSelectClick);
+}

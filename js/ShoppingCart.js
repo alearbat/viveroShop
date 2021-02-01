@@ -72,7 +72,7 @@ function addNumberOfItems() {
   shoppingCartButton.text("Carrito (" + totalUnits + ")");
 }
 
-//To show the products selected
+//To show the products selected (add message if no products)
 function showList() {
   selectedProductsContainer.empty();
 // To load the shopping cart list, if it exists
@@ -124,7 +124,6 @@ function removeOne(productId) {
   selectedProducts[i].units--;
   if (selectedProducts[i].units == 0){
     removeProduct(selectedProducts[i].id);
-    showList();
   }
   localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
   showList();
@@ -152,6 +151,6 @@ function calcTotalPrice() {
       let price = selectedProduct.price * selectedProduct.units;
       productPrice += price;
     });
-    totalPrice.text('$ ' + productPrice);
   }
+  totalPrice.text('$ ' + productPrice);
 }
