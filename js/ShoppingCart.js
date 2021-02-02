@@ -1,3 +1,10 @@
+let selectedProducts = localStorage.getItem("Selected Products");
+ if(!selectedProducts) {
+   selectedProducts = [];
+} else {
+  selectedProducts = JSON.parse(selectedProducts);
+}
+
 const domBuilder = new DOMBuilder();
 
 // To build each item of the shopping Cart list 
@@ -46,6 +53,19 @@ function buildProductList(product) {
 
     return li;
 }
+// To display hide or show element when cart isn't / is empty
+function showNotEmpty(){
+  $(".noItem").hide();
+  $(".emptyCart").show();
+  $(".name").show();
+  $(".price").show();
+} 
+function showEmpty(){
+  $(".noItem").show(1000);
+  $(".emptyCart").hide(1000);
+  $(".name").hide(500);
+  $(".price").hide(500);
+} 
 
 // To generate all cards
 const selectedProductsContainer = $("#selectedProductsContainer");
@@ -75,11 +95,15 @@ function addNumberOfItems() {
 //To show the products selected (add message if no products)
 function showList() {
   selectedProductsContainer.empty();
+  showEmpty();
 // To load the shopping cart list, if it exists
   selectedProducts.forEach(product=> {
     const cartCard = buildProductList(product);
     selectedProductsContainer.append(cartCard);
   });
+  if (selectedProducts.length > 0) {
+    showNotEmpty();
+  }
   calcTotalPrice();
   addNumberOfItems();
 } 
@@ -87,7 +111,7 @@ function showList() {
 showList();
 
 // To empty shopping cart
-const emptyCart = $("#emptyCart");
+const emptyCart = $(".emptyCart");
 
 emptyCart.click(function empty(){
   // Resets counter on "Carrito()"
@@ -96,7 +120,7 @@ emptyCart.click(function empty(){
   shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
   // Deletes all <li> added before
   $("#selectedProductsContainer").empty();
-  
+  showEmpty();
   calcTotalPrice();
 });
 
@@ -154,3 +178,12 @@ function calcTotalPrice() {
   }
   totalPrice.text('$ ' + productPrice);
 }
+
+//To redirect to home
+$(".submit").click(function(e){
+  e.preventDefault();
+  $(".modal-content").fadeOut(500);
+  setTimeout(() => {
+    location.href = "../index.html";
+    }, 500);
+});
