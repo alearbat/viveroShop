@@ -21,16 +21,20 @@ nav .navbar__element {
     margin-right: 20px; } }
 
 .card {
+  padding: 5px;
   text-align: center;
   width: 18rem;
   margin: 10px;
   border: none;
   border-radius: 20px; }
   .card .card-body {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 0px; }
   .card .btn {
     background-color: green;
     border: none; }
+  .card .btn:hover {
+    background-color: greenyellow; }
 
 footer {
   height: 70px;
@@ -49,6 +53,13 @@ footer {
     font-size: 13px;
     margin: 0;
     padding: 10px; }
+
+.textAndTitle {
+  text-align: center;
+  margin: 0 50px; }
+  .textAndTitle h1 {
+    font-size: 35px;
+    margin: 10px 0px; }
 
 .services {
   margin: 40px;
@@ -86,6 +97,11 @@ button {
     border: white;
     background-color: white;
     margin: 5px; }
+  .product .noItem {
+    text-align: center;
+    font-size: 20px;
+    color: grey;
+    margin-bottom: 0px; }
 
 body.container-fluid {
   padding: 0px; }
