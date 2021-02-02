@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Plant-Ar</title>
-  <script defer src="js/data.js"></script>
   <script defer src="js/domBuilder.js"></script>
   <script defer src="js/products.js"></script>
   <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -32,9 +31,9 @@
         <li class="nav-item">
           <a class="nav-link navbar__element" href="pages/service.html">Servicios</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link navbar__element" href="#">Contacto</a>
-        </li>
+        </li>-->
         <li class="nav-item d-flex align-items-center">
           <i class="fas fa-shopping-cart"></i>
           <a id="shoppingCart" class="nav-link navbar__element" href="pages/shoppingCart.html"></a>
@@ -44,6 +43,13 @@
   </nav>
   <!--List of products-->
   <section class="row flex justify-content-center shopping-bg">
+    <div class="row flex justify-content-center textAndTitle">
+      <h1>Nuestro vivero</h1>
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p>Te invitamos a conocer nuestro catalogo de plantas disponibles. Todos nuestras plantas son cuidadas al maximo detalle para mostrar su maximo esplendor y que tengan una larga vida.</p>
+    </div>
     <nav class="navbar navbar-expand-sm navbar-light col-xl-12 col-md-12 col-sm-12 col-12">
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">

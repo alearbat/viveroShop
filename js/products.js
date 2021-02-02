@@ -1,3 +1,12 @@
+let selectedProducts = localStorage.getItem("Selected Products");
+ if(!selectedProducts) {
+   selectedProducts = [];
+} else {
+  selectedProducts = JSON.parse(selectedProducts);
+}
+
+let products = [];
+
 const domBuilder = new DOMBuilder();
 
 // To build the card which contains each product
@@ -26,16 +35,27 @@ function buildProductCard(product) {
     return div;
 }
 
-// To generate all cards
+// To call data.json
 $(window).ready(function() { //when the DOM loads
+    $.ajax({
+        url: "js/data.json",
+        datatype: "json",
+        success: function(data) {
+            products = data;
+            showProducts();
+        }
+    });
+});
+
+// To generate all cards
+function showProducts() {
     const productContainer = $("#productContainer");  //  const productContainer is generated, which represents this section
-    
+    productContainer.empty();    
     products.forEach(product=> {  // from data.js, products array, for each product:
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
-
-});
+}
 
 // To add an item to "selectedProducts" by clicking the button
 function onSelectClick(productId) {
@@ -96,13 +116,8 @@ function sortByName() {
         }
         return 1;
     });
-    const productContainer = $("#productContainer");
-    productContainer.empty();
-    products.forEach(product=> {  
-        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
-        productContainer.append(card); // it's saved inside the section "productContainer"
-    });
-}
+    showProducts();
+} 
 
 //To sort items by max price
 function sortByMaxPrice() {
@@ -112,12 +127,7 @@ function sortByMaxPrice() {
         }
         return 1;
     });
-    const productContainer = $("#productContainer");
-    productContainer.empty();
-    products.forEach(product=> {  
-        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
-        productContainer.append(card); // it's saved inside the section "productContainer"
-    });
+    showProducts();
 }
 
 //To sort items by min price
@@ -128,10 +138,5 @@ function sortByMinPrice() {
         }
         return 1;
     });
-    const productContainer = $("#productContainer");
-    productContainer.empty();
-    products.forEach(product=> {  
-        const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
-        productContainer.append(card); // it's saved inside the section "productContainer"
-    });
+    showProducts();
 }
