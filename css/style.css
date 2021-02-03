@@ -38,16 +38,14 @@ nav .navbar__element {
 
 footer {
   height: 70px;
-  background-image: url(../img/image_footer.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  color: white; }
+  background-color: white;
+  color: #353535; }
   footer .fab {
     margin-right: 20px;
     font-size: 2em;
-    color: white; }
+    color: #353535; }
   footer .fa-twitter-square {
-    border-right: 1px solid white;
+    border-right: 1px solid #353535;
     padding-right: 20px; }
   footer .footer__copyright {
     font-size: 13px;
@@ -62,10 +60,16 @@ footer {
     margin: 10px 0px; }
 
 .services {
-  margin: 40px;
-  text-align: center; }
+  text-align: center;
+  color: white; }
   .services h1 {
     margin: 20px 0px; }
+
+.service-bg {
+  background-image: url(../img/green-bg2.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 50px; }
 
 .shopping-bg {
   background-image: url(../img/background_02.jpg);
@@ -102,6 +106,15 @@ button {
     font-size: 20px;
     color: grey;
     margin-bottom: 0px; }
+
+.form__text {
+  font-size: 15px; }
+
+.contact-bg {
+  background-image: url(../img/aloe-bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 20px; }
 
 body.container-fluid {
   padding: 0px; }
