@@ -5,6 +5,11 @@ let selectedProducts = localStorage.getItem("Selected Products");
   selectedProducts = JSON.parse(selectedProducts);
 }
 
+// To save on localStorage the selected products
+function saveLocal() {
+  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+}
+
 const domBuilder = new DOMBuilder();
 
 // To build each item of the shopping Cart list 
@@ -53,6 +58,7 @@ function buildProductList(product) {
 
     return li;
 }
+
 // To display hide or show element when cart isn't / is empty
 function showNotEmpty(){
   $(".noItem").hide();
@@ -95,14 +101,15 @@ function addNumberOfItems() {
 //To show the products selected (add message if no products)
 function showList() {
   selectedProductsContainer.empty();
-  showEmpty();
-// To load the shopping cart list, if it exists
+  // To load the shopping cart list, if it exists
   selectedProducts.forEach(product=> {
     const cartCard = buildProductList(product);
     selectedProductsContainer.append(cartCard);
   });
   if (selectedProducts.length > 0) {
     showNotEmpty();
+  } else {
+    showEmpty();
   }
   calcTotalPrice();
   addNumberOfItems();
@@ -116,7 +123,7 @@ const emptyCart = $(".emptyCart");
 emptyCart.click(function empty(){
   // Resets counter on "Carrito()"
   selectedProducts = [];
-  localStorage.setItem("Selected Products", []);
+  saveLocal();
   shoppingCartButton.text("Carrito (" + selectedProducts.length + ")");
   // Deletes all <li> added before
   $("#selectedProductsContainer").empty();
@@ -146,10 +153,11 @@ function removeOne(productId) {
     }
   }
   selectedProducts[i].units--;
+  // To remove product if there are no units
   if (selectedProducts[i].units == 0){
     removeProduct(selectedProducts[i].id);
   }
-  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+  saveLocal();
   showList();
 }
 
@@ -162,7 +170,7 @@ function removeProduct(productId){
     }
   }
   selectedProducts.splice(i, 1);
-  localStorage.setItem("Selected Products", JSON.stringify(selectedProducts));
+  saveLocal();
   showList();
 }
 
@@ -182,7 +190,7 @@ function calcTotalPrice() {
 //To redirect to home
 $(".submit").click(function(e){
   e.preventDefault();
-  $(".modal-content").fadeOut(500);
+  $(".modal-content").slideUp(500);
   setTimeout(() => {
     location.href = "../index.html";
     }, 500);
