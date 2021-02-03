@@ -52,6 +52,11 @@ footer {
     margin: 0;
     padding: 10px; }
 
+.carousel {
+  height: 450px; }
+  .carousel img {
+    height: 450px; }
+
 .textAndTitle {
   text-align: center;
   margin: 0 50px; }
