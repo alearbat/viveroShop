@@ -42,7 +42,7 @@
   "id" : 6,
   "code" : "P0006",
   "name" : "Cleistocactus",
-  "image" : "../img/Cleistocactus.jpg",
+  "image" : "../img/cleistocactus.jpg",
   "price" : 500,
   "available" : true,
   "tags" : ["cactus", "suculenta"]
