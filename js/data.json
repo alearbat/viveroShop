@@ -78,5 +78,13 @@
   "price" : 650,
   "available" : true,
   "tags" : ["lechuza", "flor"]
+},{
+  "id" : 11,
+  "code" : "P0011",
+  "name" : "Perubeano",
+  "image" : "../img/perubeano.jpg",
+  "price" : 715,
+  "available" : true,
+  "tags" : ["perubeano", "verde"]
 }]
 
