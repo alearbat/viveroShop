@@ -70,5 +70,13 @@
   "price" : 450,
   "available" : true,
   "tags" : ["cactus", "suculenta"]
+},{
+  "id" : 10,
+  "code" : "P0010",
+  "name" : "Lechuza",
+  "image" : "../img/lechuza.jpg",
+  "price" : 650,
+  "available" : true,
+  "tags" : ["lechuza", "flor"]
 }]
 
