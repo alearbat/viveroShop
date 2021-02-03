@@ -38,7 +38,7 @@ function buildProductCard(product) {
 // To call data.json
 $(window).ready(function() { //when the DOM loads
     $.ajax({
-        url: "js/data.json",
+        url: "../js/data.json",
         datatype: "json",
         success: function(data) {
             products = data;
