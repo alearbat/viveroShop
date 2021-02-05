@@ -55,7 +55,9 @@ footer {
 .carousel {
   height: 450px; }
   .carousel img {
-    height: 450px; }
+    object-fit: fill; }
+  .carousel .text-carousel {
+    margin-bottom: 150px; }
 
 .textAndTitle {
   text-align: center;

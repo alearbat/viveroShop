@@ -85,7 +85,10 @@ footer {
 .carousel {
   height: 450px;
   img {
-    height: 450px;
+    object-fit: fill;
+  }
+  .text-carousel {
+    margin-bottom: 150px;
   }
 }
 
