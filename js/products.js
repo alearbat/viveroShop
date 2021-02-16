@@ -51,7 +51,7 @@ $(window).ready(function() { //when the DOM loads
 function showProducts() {
     const productContainer = $("#productContainer");  //  const productContainer is generated, which represents this section
     productContainer.empty();    
-    products.forEach(product=> {  // from data.js, products array, for each product:
+    products.forEach(product => {  // from data.js, products array, for each product:
         const card = buildProductCard(product); // it buids una card taking the structure writen inside the function buildProductCard
         productContainer.append(card); // it's saved inside the section "productContainer"
     });
@@ -62,7 +62,7 @@ function onSelectClick(productId) {
     const selectedId = productId;
     
     let selectedProduct = {};
-    for(let product of products){
+    for(let product of products) {
         if(parseInt(product.id) === parseInt(selectedId)) {
             selectedProduct = product;
             break;
@@ -70,7 +70,7 @@ function onSelectClick(productId) {
     }
     let found = false;
     for(let entry of selectedProducts) {  
-        if(parseInt(selectedProduct.id) === parseInt(entry.id)){ //If selectedProduct exists at selectedProducts array:
+        if(parseInt(selectedProduct.id) === parseInt(entry.id)) { //If selectedProduct exists at selectedProducts array:
             entry.units ++;
             found = true;
             break;
@@ -91,9 +91,9 @@ let totalUnits;
 function totalQ() {
     totalUnits = 0;
     if(selectedProducts.length > 0) {
-        for(let i = 0; i<selectedProducts.length; i++){
-        let count = selectedProducts[i].units;
-        totalUnits = totalUnits + count;
+        for(let i = 0; i<selectedProducts.length; i++) {
+            let count = selectedProducts[i].units;
+            totalUnits = totalUnits + count;
         }
     }
 }

@@ -60,13 +60,13 @@ function buildProductList(product) {
 }
 
 // To display hide or show element when cart isn't / is empty
-function showNotEmpty(){
+function showNotEmpty() {
   $(".noItem").hide();
   $(".emptyCart").show();
   $(".name").show();
   $(".price").show();
 } 
-function showEmpty(){
+function showEmpty() {
   $(".noItem").show(1000);
   $(".emptyCart").hide(1000);
   $(".name").hide(500);
@@ -81,9 +81,9 @@ let totalUnits;
 function totalQ() {
   totalUnits = 0;
   if(selectedProducts.length > 0) {
-    for(let i = 0; i<selectedProducts.length; i++){
-    let count = selectedProducts[i].units;
-    totalUnits = totalUnits + count;
+    for(let i = 0; i<selectedProducts.length; i++) {
+      let count = selectedProducts[i].units;
+      totalUnits = totalUnits + count;
     }
   }
 }
@@ -106,7 +106,7 @@ function showList() {
     const cartCard = buildProductList(product);
     selectedProductsContainer.append(cartCard);
   });
-  if (selectedProducts.length > 0) {
+  if(selectedProducts.length > 0) {
     showNotEmpty();
   } else {
     showEmpty();
@@ -120,7 +120,7 @@ showList();
 // To empty shopping cart
 const emptyCart = $(".emptyCart");
 
-emptyCart.click(function empty(){
+emptyCart.click(function empty() {
   // Resets counter on "Carrito()"
   selectedProducts = [];
   saveLocal();
@@ -135,7 +135,7 @@ emptyCart.click(function empty(){
 function addOne(productId) {
   let i;
   for(i=0; i<selectedProducts.length; i++) {
-    if (selectedProducts[i].id == productId) {
+    if(selectedProducts[i].id == productId) {
       break;
     }
   }
@@ -148,13 +148,13 @@ function addOne(productId) {
 function removeOne(productId) {
   let i;
   for(i=0; i<selectedProducts.length; i++) {
-    if (selectedProducts[i].id == productId) {
+    if(selectedProducts[i].id == productId) {
       break;
     }
   }
   selectedProducts[i].units--;
   // To remove product if there are no units
-  if (selectedProducts[i].units == 0){
+  if(selectedProducts[i].units == 0) {
     removeProduct(selectedProducts[i].id);
   }
   saveLocal();
@@ -162,10 +162,10 @@ function removeOne(productId) {
 }
 
 // To delete an item
-function removeProduct(productId){
+function removeProduct(productId) {
   let i;
   for(i=0; i<selectedProducts.length; i++) {
-    if (selectedProducts[i].id == productId) {
+    if(selectedProducts[i].id == productId) {
       break;
     }
   }
@@ -179,7 +179,7 @@ function calcTotalPrice() {
   const totalPrice = $("#totalPrice");
   let productPrice = 0;
   if(selectedProducts.length > 0) {
-    selectedProducts.forEach(selectedProduct =>{
+    selectedProducts.forEach(selectedProduct => {
       let price = selectedProduct.price * selectedProduct.units;
       productPrice += price;
     });
@@ -188,7 +188,7 @@ function calcTotalPrice() {
 }
 
 //To redirect to home after buying
-$(".submit").click(function(e){
+$(".submit").click(function(e) {
   e.preventDefault();
   $(".modal-content").slideUp(500);
   setTimeout(() => {
