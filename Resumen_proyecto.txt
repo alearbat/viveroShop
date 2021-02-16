@@ -5,4 +5,3 @@ Funciones contempladas:
 - sumar y restar productos al carrito
 - calcular el total de la compra
 - calcular posibles promociones que pueda haber
-- calcular precio de delivery segun ubicacion
