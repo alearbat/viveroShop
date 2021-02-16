@@ -187,7 +187,7 @@ function calcTotalPrice() {
   totalPrice.text('$ ' + productPrice);
 }
 
-//To redirect to home
+//To redirect to home after buying
 $(".submit").click(function(e){
   e.preventDefault();
   $(".modal-content").slideUp(500);

@@ -100,6 +100,8 @@ button {
   .product .cart__img {
     size: 80%;
     border-radius: 5px; }
+  .product .price {
+    padding-right: 0px; }
   .product .total {
     border-top: solid 1px grey;
     margin-top: 20px;
